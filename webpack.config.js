@@ -1,21 +1,27 @@
 const path = require('path');
-const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const  VueLoaderPlugin  = require('vue-loader/lib/plugin');
 
 module.export = {
-    entry: path.join(__dirname, 'src', 'main.js'),
+    mode: 'production',
+    entry: path.join(__dirname, 'src', 'index.js'),
     output: {
         path: path.join(__dirname, 'dist'),
         publicPath: '/dist/', 
-        filename: 'duild.js'
+        filename: 'build.js'
     },
     module: {
         rules: [
             {
                 test: /\.vue$/,
-                loader: 'vue-loader'
+                loader: 'vue-loader',
+                
             },
             {
-                test:/\.css$/,
+                test: /\.js$/,
+                loader: 'babel-loader'
+            },
+            {
+                test: /\.css$/,
                 use: [
                     'vue-style-loader',
                     'css-loader'

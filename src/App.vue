@@ -1,19 +1,20 @@
 <template>
     <div id="text">
-        <h3> {{ text }} </h3>
+        <h1>{{text}}</h1>
     </div>
 </template>
 
 <script>
 export default {
     name: 'app',
-    data() {
+    data(){
         return {
             text: 'Welcome'
         }
     }
 }
 </script>
+
  <style>
     #text {
         color: brown;
